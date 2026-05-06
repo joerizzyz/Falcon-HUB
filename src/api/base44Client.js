@@ -1,1 +1,12 @@
-export const db = { auth: { isAuthenticated: async ()=>false, me: async ()=>null }, entities: new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } }; export const base44=db; export default db;
+import { createClient } from '@base44/sdk';
+
+export const base44 = createClient({
+  appId: "69ef66fe4f340c1dcd4f7578",
+  headers: {
+    "api_key": "f270749a92c94cf1af0ff51f28bf8e0d"
+  }
+});
+
+export const db = base44;
+
+export default base44;
